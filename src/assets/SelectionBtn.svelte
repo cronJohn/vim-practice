@@ -20,7 +20,7 @@
 
 <svelte:body on:keypress={inputShortcut}/>
 
-<button transition:fly="{{ y: 50, duration: 500, delay: stagger }}"><p>{text}</p><img class="icon" alt="SVG for {text}" src="../../public/{text}.svg"></button>
+<button transition:fly="{{ y: 50, duration: 500, delay: stagger }}"><p>{text}</p><img class="icon" alt="SVG for {text}" src="/{text}.svg"></button>
 
 <style>
     button {

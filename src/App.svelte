@@ -1,6 +1,6 @@
 <script lang="ts">
     import SelectionBtn from "./assets/SelectionBtn.svelte";
-    import { concurrent } from 'svelte-typewriter'
+    import Typewriter from 'svelte-typewriter'
 
     let changeScreen = (e: CustomEvent) => {
         switch (e.detail.key) {
@@ -19,7 +19,9 @@
 </script>
 
 <main>
-    <h1 use:concurrent={{ interval: 30 }}>What would you like to practice...</h1>
+    <Typewriter>
+        <h1>What would you like to practice...</h1>
+    </Typewriter>
     <section>
         <SelectionBtn on:shortcut={changeScreen} text={"Movement"} stagger={0}/>
         <SelectionBtn on:shortcut={changeScreen} text={"Replacement"} stagger={75}/>
