@@ -6,6 +6,7 @@ specifiers:
   gh-pages: ^5.0.0
   svelte: ^3.55.1
   svelte-check: ^2.10.3
+  svelte-typewriter: ^3.1.4
   tslib: ^2.5.0
   typescript: ^4.9.3
   vite: ^4.1.0
@@ -16,6 +17,7 @@ devDependencies:
   gh-pages: 5.0.0
   svelte: 3.55.1
   svelte-check: 2.10.3_svelte@3.55.1
+  svelte-typewriter: 3.1.4_svelte@3.55.1
   tslib: 2.5.0
   typescript: 4.9.5
   vite: 4.1.4
@@ -1008,6 +1010,14 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.55.1
       typescript: 4.9.5
+    dev: true
+
+  /svelte-typewriter/3.1.4_svelte@3.55.1:
+    resolution: {integrity: sha512-FNnXBRp2bd7/DK3k0hXwsFIp4YxZ1JcUYCHU+97ZllKYOW+jWBRAxImQUjB93YrwXa1zU+ItesPlwreyOjD9FQ==}
+    peerDependencies:
+      svelte: '>=3.47.x'
+    dependencies:
+      svelte: 3.55.1
     dev: true
 
   /svelte/3.55.1:
