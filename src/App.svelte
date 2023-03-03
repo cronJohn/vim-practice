@@ -2,6 +2,12 @@
     import SelectionBtn from "./assets/SelectionBtn.svelte";
     import Typewriter from 'svelte-typewriter'
 
+    let menu = [
+        { id: 1, name: 'Movement', sub: [{name: 'A'},{name: 'B'},{name: 'C'}] },
+        { id: 2, name: 'Replacement' },
+        { id: 3, name: 'Actions' },
+    ];
+
     let changeScreen = (e: CustomEvent) => {
         switch (e.detail.key) {
             case 'm':
@@ -16,6 +22,17 @@
         }
     }
 
+    function removeMenu() {
+    const intervalId = setInterval(() => {
+      if (menu.length > 0) {
+            menu.pop();
+            menu = menu;
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 500);
+  }
+
 </script>
 
 <main>
@@ -23,10 +40,11 @@
         <h1>What would you like to practice...</h1>
     </Typewriter>
     <section>
-        <SelectionBtn on:shortcut={changeScreen} text={"Movement"} stagger={0}/>
-        <SelectionBtn on:shortcut={changeScreen} text={"Replacement"} stagger={75}/>
-        <SelectionBtn on:shortcut={changeScreen} text={"Actions"} stagger={150}/>
+        {#each menu as btn (btn.id)}
+            <SelectionBtn on:shortcut={changeScreen} text={btn.name} stagger={0}/>
+        {/each}
     </section>
+    <button on:click={removeMenu}>Click me</button>
 </main>
 
 <style>
